@@ -18,7 +18,12 @@ import os
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Configuración de la carpeta media
+MEDIA_URL = '/media/'  # Esta es la URL que se usará para acceder a los archivos
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Esta es la ruta donde se almacenarán los archivos
 
 AUTH_USER_MODEL = "api.CustomUser"
 
