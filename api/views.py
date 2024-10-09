@@ -3,6 +3,8 @@ from rest_framework import generics, viewsets, permissions
 from .serializers import RegisterSerializer, CustomTokenObtainPairSerializer, ProductoSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from .models import Producto
+from .models import Review
+from .serializers import ReviewSerializer
 
 
 class RegisterView(generics.CreateAPIView):
@@ -16,3 +18,8 @@ class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
     permission_classes = [permissions.AllowAny]
+
+
+class ReviewViewSet(viewsets.ModelViewSet):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
