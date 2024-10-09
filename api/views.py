@@ -1,8 +1,8 @@
 # views.py
 from rest_framework import generics, viewsets, permissions
-from .serializers import RegisterSerializer, CustomTokenObtainPairSerializer, ProductoSerializer
+from .serializers import RegisterSerializer, CustomTokenObtainPairSerializer, ProductSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
-from .models import Producto
+from .models import Product
 from .models import Review
 from .serializers import ReviewSerializer
 
@@ -14,9 +14,9 @@ class RegisterView(generics.CreateAPIView):
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
 
-class ProductoViewSet(viewsets.ModelViewSet):
-    queryset = Producto.objects.all()
-    serializer_class = ProductoSerializer
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
     permission_classes = [permissions.AllowAny]
 
 
