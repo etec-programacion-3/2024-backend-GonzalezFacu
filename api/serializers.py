@@ -1,4 +1,3 @@
-# serializers.py
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth import authenticate
 from rest_framework import serializers
@@ -44,15 +43,20 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
             return super().validate(attrs)
         
         raise ValidationError('Please provide both email and password')
-    
+
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = '__all__'
-
-
+        fields = ['id', 'rating', 'name', 'description', 'price', 'stock', 'image', 'categories']
 
 class ReviewSerializer(serializers.ModelSerializer):
+    product = ProductSerializer()  # Cambiar a 'product' (minúscula)
+
     class Meta:
         model = Review
-        fields = ['id', 'product', 'user_name', 'rating', 'content', 'created_at']
+        fields = ['id', 'product', 'author', 'rating', 'content', 'created_at']
+    
+    def create(self, validated_data):
+        review = Review(**validated_data)
+        review.save()  # Esto llamará al método save que actualiza el rating del producto
+        return review

@@ -19,7 +19,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    rating = models.DecimalField(max_digits=1, decimal_places=0, default=0)
+    rating = models.DecimalField(max_digits=2, decimal_places=1, default=0)  # Cambia el max_digits a 2 para permitir decimales
     stock = models.IntegerField()
     image = models.ImageField(upload_to='products/')
     categories = models.ManyToManyField(Category, related_name='products')
@@ -28,10 +28,22 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def update_rating(self):
+        reviews = self.review_set.all()  # Obtener todas las reseñas relacionadas
+        if reviews.exists():
+            average_rating = reviews.aggregate(models.Avg('rating'))['rating__avg']
+            self.rating = round(average_rating, 1)  # Redondear a 1 decimal
+            self.save()  # Guardar el producto con el nuevo rating
+
     
 class Review(models.Model):
-    product = models.ForeignKey('Product', on_delete=models.CASCADE)  # Relation with the product
-    user_name = models.CharField(max_length=100)  # Name of the user leaving the review
-    rating = models.DecimalField(max_digits=2, decimal_places=1)  # Rating, e.g., from 1 to 5
-    content = models.TextField()  # Content of the review
-    created_at = models.DateTimeField(auto_now_add=True)  # Creation date
+    product = models.ForeignKey('Product', on_delete=models.CASCADE)  # Relación con el producto
+    author = models.CharField(max_length=100)  # Nombre del autor de la reseña
+    rating = models.DecimalField(max_digits=2, decimal_places=1)  # Rating, por ejemplo, de 1 a 5
+    content = models.TextField()  # Contenido de la reseña
+    created_at = models.DateTimeField(auto_now_add=True)  # Fecha de creación
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Llamar al método save original
+        self.product.update_rating()  # Actualizar el rating del producto relacionado
