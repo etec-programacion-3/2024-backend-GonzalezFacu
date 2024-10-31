@@ -2,7 +2,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth import authenticate
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-from .models import CustomUser, Product, Review
+from .models import CustomUser, Product, Review, Difficulty
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -44,10 +44,16 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         
         raise ValidationError('Please provide both email and password')
 
+class DifficultySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Difficulty
+        fields = ['name']
+
 class ProductSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Product
-        fields = ['id', 'rating', 'name', 'description', 'price', 'stock', 'image', 'categories']
+        fields = ['id', 'rating', 'name', 'description', 'shortDescripiton', 'price', 'prepTime', 'difficulty', 'stock', 'image', 'categories']
 
 class ReviewSerializer(serializers.ModelSerializer):
     product = ProductSerializer()  # Cambiar a 'product' (minúscula)
