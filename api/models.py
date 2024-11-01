@@ -24,7 +24,7 @@ class Difficulty(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    shortDescripiton = models.CharField(max_length=255, default="")
+    shortDescription = models.CharField(max_length=255, default="")
     price = models.DecimalField(max_digits=10, decimal_places=2)
     rating = models.DecimalField(max_digits=2, decimal_places=1, default=0)  # Cambia el max_digits a 2 para permitir decimales
     stock = models.IntegerField()

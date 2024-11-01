@@ -53,7 +53,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ['id', 'rating', 'name', 'description', 'shortDescripiton', 'price', 'prepTime', 'difficulty', 'stock', 'image', 'categories']
+        fields = ['id', 'rating', 'name', 'description', 'shortDescription', 'price', 'prepTime', 'difficulty', 'stock', 'image', 'categories']
 
 class ReviewSerializer(serializers.ModelSerializer):
     product = ProductSerializer()  # Cambiar a 'product' (minúscula)
