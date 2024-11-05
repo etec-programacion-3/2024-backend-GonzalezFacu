@@ -44,7 +44,6 @@ class Product(models.Model):
             average_rating = reviews.aggregate(models.Avg('rating'))['rating__avg']
             self.rating = round(average_rating, 1)  # Redondear a 1 decimal
             self.save()  # Guardar el producto con el nuevo rating
-
     
 class Review(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE)  # Relación con el producto
