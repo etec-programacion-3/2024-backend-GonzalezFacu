@@ -55,3 +55,21 @@ class Review(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)  # Llamar al método save original
         self.product.update_rating()  # Actualizar el rating del producto relacionado
+
+class Cart(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)  # Relación con el usuario
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Cart of {self.user.email}'
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, related_name='items', on_delete=models.CASCADE)  # Relación con el carrito
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)  # Relación con el producto
+    quantity = models.PositiveIntegerField(default=1)  # Cantidad del producto
+
+    def __str__(self):
+        return f'{self.quantity} of {self.product.name} in {self.cart.user.email} cart'
+
+    class Meta:
+        unique_together = ('cart', 'product')  # Evitar duplicados en el carrito

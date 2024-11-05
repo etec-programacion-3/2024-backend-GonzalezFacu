@@ -2,7 +2,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth import authenticate
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-from .models import CustomUser, Product, Review, Difficulty
+from .models import CustomUser, Product, Review, Difficulty, CartItem, Cart
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -55,6 +55,7 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = ['id', 'rating', 'name', 'description', 'shortDescription', 'price', 'prepTime', 'difficulty', 'stock', 'image', 'categories']
 
+
 class ReviewSerializer(serializers.ModelSerializer):
     product = ProductSerializer()  # Cambiar a 'product' (minúscula)
 
@@ -66,3 +67,46 @@ class ReviewSerializer(serializers.ModelSerializer):
         review = Review(**validated_data)
         review.save()  # Esto llamará al método save que actualiza el rating del producto
         return review
+    
+class SimpleProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ['name', 'price', 'image']
+    
+class CartItemSerializer(serializers.ModelSerializer):
+    product = SimpleProductSerializer()  # Incluir el serializer del producto
+
+    class Meta:
+        model = CartItem
+        fields = ['id', 'product', 'quantity']
+
+class CartSerializer(serializers.ModelSerializer):
+    items = CartItemSerializer(many=True)
+
+    class Meta:
+        model = Cart
+        fields = ['id', 'user', 'items']
+
+    def create(self, validated_data):
+        items_data = validated_data.pop('items')
+        cart = Cart.objects.create(**validated_data)
+        for item_data in items_data:
+            CartItem.objects.create(cart=cart, **item_data)
+        return cart
+
+    def update(self, instance, validated_data):
+        items_data = validated_data.pop('items')
+        instance.user = validated_data.get('user', instance.user)
+        instance.save()
+
+        # Actualizar los elementos del carrito
+        for item_data in items_data:
+            item_id = item_data.get('id')
+            if item_id:  # Si el elemento ya existe, actualízalo
+                item = CartItem.objects.get(id=item_id, cart=instance)
+                item.quantity = item_data.get('quantity', item.quantity)
+                item.save()
+            else:  # Si es un nuevo elemento, créalo
+                CartItem.objects.create(cart=instance, **item_data)
+
+        return instance

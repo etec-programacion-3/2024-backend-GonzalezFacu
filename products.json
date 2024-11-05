@@ -1,0 +1,198 @@
+[
+  {
+    "model": "api.product",
+    "pk": 1,
+    "fields": {
+      "name": "Sweet Corn & Green Pepper Chowder",
+      "description": "We couldn’t be prouda of this chowda! This creamy soup has all the veggies worth boasting about, like corn, green pepper, and tender potatoes. Cream cheese and melty cheddar are swirled in for extra richness, then, it’s all dolloped with sour cream and garnished with scallions. On the side, there’s toasted baguette slathered with an Old Bay compound butter so you can sop up every last drop.",
+      "shortDescription": "with Old Bay Toast",
+      "price": "15000.00",
+      "rating": "5.0",
+      "stock": 2,
+      "prepTime": 25,
+      "image": "products/Sweet_Corn_&_Green_Pepper_Chowder.png",
+      "created_at": "2024-10-09T15:23:23.206Z",
+      "updated_at": "2024-11-01T14:55:24.133Z",
+      "difficulty": [2],
+      "categories": [1]
+    }
+  },
+  {
+    "model": "api.product",
+    "pk": 2,
+    "fields": {
+      "name": "Honey Sriracha Pork Filet",
+      "description": "Another work day, another dinner daydream. You know what we mean. You’re sitting at your desk and 2:00 p.m. rolls around. Suddenly, all you can think is, “Dinner...what the heck am I going to eat for dinner?!” Well, we’ve got you covered, and FYI, the answer to that question is pretty glorious. We’re talking succulent pork filet, roasted sesame carrots, and fluffy cilantro lime rice. To finish things off, the pork is drizzled in a lick-the-plate-worthy sauce made with sesame oil, scallions, ginger, honey, and sriracha. Talk about a dream come true!",
+      "shortDescription": "with Roasted Sesame Carrots & Cilantro Lime Rice",
+      "price": "25000.00",
+      "rating": "4.7",
+      "stock": 12500,
+      "prepTime": 30,
+      "image": "products/Honey_Sriracha_Pork_Filet.png",
+      "created_at": "2024-10-09T15:51:34.910Z",
+      "updated_at": "2024-11-01T14:54:25.891Z",
+      "difficulty": [3],
+      "categories": [2, 3]
+    }
+  },
+  {
+    "model": "api.product",
+    "pk": 3,
+    "fields": {
+      "name": "Gingery Coconut Chicken Soup",
+      "description": "It sounds obvious to say a soup is warming—it’s served hot, after all—but this version is like a pair of cozy socks for your insides! Ginger, curry powder, and sweet Thai chile sauce add a ton of warming flavors. Instead of the usual rice or noodles, our chefs added fiber-rich farro, an ancient grain that adds a delightfully chewy texture and nuttiness to each bowl. So get those spoons ready (and maybe surprise yourself with lower heating bills, too).",
+      "shortDescription": "with Farro, Carrots & Lime",
+      "price": "30000.00",
+      "rating": "5.0",
+      "stock": 6,
+      "prepTime": 45,
+      "image": "products/Gingery_Coconut_Chicken_Soup.png",
+      "created_at": "2024-10-09T15:53:20.958Z",
+      "updated_at": "2024-11-01T14:55:56.557Z",
+      "difficulty": [2],
+      "categories": [4]
+    }
+  },
+  {
+    "model": "api.product",
+    "pk": 4,
+    "fields": {
+      "name": "Pecan-Crusted Chicken",
+      "description": "Is there anything better than chicken with a crunchy, nutty topping? Why, yes! How about chicken coated in a creamy honey mustard sauce, then crusted in a mixture of crushed pecans, panko, and butter? (To be honest, we’d eat anything with that sprinkled on top!) The topping turns toasty and crispy in the oven as the chicken cooks to juicy perfection. As if that weren’t enough to sell you, on the side, we’re serving up lemony, apple-studded mixed greens (and more of that awesome honey mustard sauce for dipping). Weeknight luxury is just 30 minutes away!",
+      "shortDescription": "with Honey Mustard Sauce & Lemony Apple Salad",
+      "price": "27000.00",
+      "rating": "5.0",
+      "stock": 100,
+      "prepTime": 60,
+      "image": "products/Pecan-Crusted_Chicken.png",
+      "created_at": "2024-10-30T15:27:26.501Z",
+      "updated_at": "2024-11-01T14:56:21.932Z",
+      "difficulty": [3],
+      "categories": [4]
+    }
+  },
+  {
+    "model": "api.product",
+    "pk": 5,
+    "fields": {
+      "name": "Honey-Butter BBQ Pork Chops",
+      "description": "The easiest way to add tons of restaurant-level flair to a dish with almost no effort? Two words: compound butter. For chefs, this ingredient is the ultimate secret weapon to making can’t-put-your-fork-down meals. Here, we’ve mixed softened butter with honey and salt. It’s dolloped onto warm, BBQ-spiced pork chops.",
+      "shortDescription": "with Mashed Sweet Potatoes & Lemony Green Beans",
+      "price": "45000.00",
+      "rating": "5.0",
+      "stock": 100,
+      "prepTime": 45,
+      "image": "products/Honey-Butter_BBQ_Pork_Chops.png",
+      "created_at": "2024-10-30T15:30:49.340Z",
+      "updated_at": "2024-11-01T14:56:28.321Z",
+      "difficulty": [2],
+      "categories": [4]
+    }
+  },
+  {
+    "model": "api.product",
+    "pk": 6,
+    "fields": {
+      "name": "One-Pot Mexicali Black Bean Soup",
+      "description": "This week, we’re serving a hearty, flavorful black bean soup that cooks up in one pot, and is ready in just 20 minutes! The beans are simmered in a richly spiced broth with sauteed onion, tomato paste, and Southwest seasonings until the soup is thick and the beans are infused with flavor. For toppings, load up with “the works”—cheddar cheese, smoky red pepper crema, and crushed blue corn tortilla chips. That’s what we call a truly SOUP-er supper.",
+      "shortDescription": "with the Works",
+      "price": "50000.00",
+      "rating": "4.0",
+      "stock": 100,
+      "prepTime": 20,
+      "image": "products/One-Pot_Mexicali_Black_Bean_Soup.png",
+      "created_at": "2024-11-01T14:16:27.756Z",
+      "updated_at": "2024-11-01T14:18:49.540Z",
+      "difficulty": [1],
+      "categories": [1, 3]
+    }
+  },
+  {
+    "model": "api.review",
+    "pk": 1,
+    "fields": {
+      "product": 2,
+      "author": "Facundo Gonzalez",
+      "rating": "5.0",
+      "content": "Una experiencia gastronómica fantástica en casa. ¡Lo recomiendo!",
+      "created_at": "2024-10-23T14:07:35.806Z"
+    }
+  },
+  {
+    "model": "api.review",
+    "pk": 2,
+    "fields": {
+      "product": 3,
+      "author": "Tomas Fuentes",
+      "rating": "5.0",
+      "content": "¡Los kits gourmet son increíbles! Perfectos para cenas especiales.",
+      "created_at": "2024-10-23T14:07:58.958Z"
+    }
+  },
+  {
+    "model": "api.review",
+    "pk": 3,
+    "fields": {
+      "product": 1,
+      "author": "Matias Diaz",
+      "rating": "5.0",
+      "content": "Los ingredientes son de excelente calidad, ¡me encantan!",
+      "created_at": "2024-10-23T14:08:11.896Z"
+    }
+  },
+  {
+    "model": "api.review",
+    "pk": 4,
+    "fields": {
+      "product": 2,
+      "author": "Inaki Gongora",
+      "rating": "4.0",
+      "content": "Vomitivo. No Recomiendo",
+      "created_at": "2024-10-23T15:31:16.386Z"
+    }
+  },
+  {
+    "model": "api.review",
+    "pk": 5,
+    "fields": {
+      "product": 2,
+      "author": "Naiara Errecalde",
+      "rating": "5.0",
+      "content": "Horrible la comida no recomiendo",
+      "created_at": "2024-10-30T13:06:45.485Z"
+    }
+  },
+  {
+    "model": "api.review",
+    "pk": 6,
+    "fields": {
+      "product": 4,
+      "author": "Javier Gonzalez",
+      "rating": "5.0",
+      "content": "Una de mis mejores comidas",
+      "created_at": "2024-11-01T01:10:56.355Z"
+    }
+  },
+  {
+    "model": "api.review",
+    "pk": 7,
+    "fields": {
+      "product": 5,
+      "author": "Natalia Pelaitai",
+      "rating": "5.0",
+      "content": "Lo mejor de lo mejor",
+      "created_at": "2024-11-01T01:12:39.575Z"
+    }
+  },
+  {
+    "model": "api.review",
+    "pk": 8,
+    "fields": {
+      "product": 6,
+      "author": "Federico Pagano",
+      "rating": "4.0",
+      "content": "Una de las mejores sopas que comi.",
+      "created_at": "2024-11-01T14:18:49.478Z"
+    }
+  }
+]
