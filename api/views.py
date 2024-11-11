@@ -12,10 +12,10 @@ from .serializers import (
     ProductSerializer,
     ReviewSerializer,
     CartSerializer,
-    CartItemSerializer
+    CartItemSerializer,
+    UserProfileSerializer
 )
 from .models import Product, Review, Cart, CartItem
-
 
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
@@ -23,6 +23,13 @@ class RegisterView(generics.CreateAPIView):
 
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
+
+class UserProfileView(generics.RetrieveUpdateAPIView):
+    serializer_class = UserProfileSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()

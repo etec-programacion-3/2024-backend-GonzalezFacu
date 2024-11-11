@@ -2,11 +2,27 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-class CustomUser(AbstractUser):
-    email = models.EmailField(unique=True)
 
+class CustomUser(AbstractUser):
+    username = models.CharField(max_length=150, blank=True, null=True, unique=False)
+    first_name = models.CharField(max_length=30, blank=True)
+    last_name = models.CharField(max_length=30, blank=True)
+    email = models.EmailField(unique=True)
+    image = models.ImageField(upload_to='users/', default='users/placeholderUserImage.jpg')
+    country_code = models.CharField(max_length=5, blank=True, null=True)
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    street = models.CharField(max_length=100, blank=True, null=True)
+    city = models.CharField(max_length=50, blank=True, null=True)
+    state = models.CharField(max_length=50, blank=True, null=True)
+    zip_code = models.CharField(max_length=10, blank=True, null=True)
+    country = models.CharField(max_length=50, blank=True, null=True)
+    
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']  # Not necessary to require username
+    REQUIRED_FIELDS = []  # Not necessary to require username
+
+    def __str__(self):
+        return self.email
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)  # Category name

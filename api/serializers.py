@@ -44,6 +44,15 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         
         raise ValidationError('Please provide both email and password')
 
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = [
+            'first_name', 'last_name', 'country_code', 'image', 'email', 'phone_number', 'street', 'city', 'state', 'zip_code', 'country'
+        ]
+
+
 class DifficultySerializer(serializers.ModelSerializer):
     class Meta:
         model = Difficulty
