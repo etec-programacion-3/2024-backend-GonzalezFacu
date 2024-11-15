@@ -39,11 +39,12 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost",  # Para desarrollo en localhost
-    "http://192.168.100.36:5173",   # Dirección de tu frontend con la IP
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost",  # Para desarrollo en localhost
+#     "http://192.168.42.22",   # Dirección de tu frontend con la IP
+# ]
 
 
 
