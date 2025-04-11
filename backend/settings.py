@@ -39,7 +39,10 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:80",
+]
 
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost",  # Para desarrollo en localhost
@@ -120,7 +123,7 @@ DATABASES = {
         'NAME': 'gourmetkits',
         'USER': 'FacundoGonzalez',
         'PASSWORD': 'Facu2532',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }

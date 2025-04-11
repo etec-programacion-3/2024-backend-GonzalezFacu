@@ -1,0 +1,143 @@
+[
+    {
+      "model": "api.category",
+      "pk": 1,
+      "fields": {
+        "name": "Carnes"
+      }
+    },
+    {
+      "model": "api.category",
+      "pk": 2,
+      "fields": {
+        "name": "Vegetariano"
+      }
+    },
+    {
+      "model": "api.category",
+      "pk": 3,
+      "fields": {
+        "name": "Internacional"
+      }
+    },
+    {
+        "model": "api.category",
+        "pk": 4,
+        "fields": {
+          "name": "Vegano"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 5,
+        "fields": {
+          "name": "Postres"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 6,
+        "fields": {
+          "name": "Bebidas"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 7,
+        "fields": {
+          "name": "Ensaladas"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 8,
+        "fields": {
+          "name": "Sopas"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 9,
+        "fields": {
+          "name": "Pasta"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 10,
+        "fields": {
+          "name": "Mariscos"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 11,
+        "fields": {
+          "name": "Salsas"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 12,
+        "fields": {
+          "name": "Arroces"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 13,
+        "fields": {
+          "name": "Pescados"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 14,
+        "fields": {
+          "name": "Guisos"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 15,
+        "fields": {
+          "name": "Tortas"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 16,
+        "fields": {
+          "name": "Pizzas"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 17,
+        "fields": {
+          "name": "Tortillas"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 18,
+        "fields": {
+          "name": "Crepes"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 19,
+        "fields": {
+          "name": "Burgers"
+        }
+    },
+    {
+        "model": "api.category",
+        "pk": 20,
+        "fields": {
+          "name": "Panes"
+        }
+    }
+  ]
+  

@@ -1,0 +1,24 @@
+[
+    {
+      "model": "api.difficulty",
+      "pk": 1,
+      "fields": {
+        "name": "Fácil"
+      }
+    },
+    {
+      "model": "api.difficulty",
+      "pk": 2,
+      "fields": {
+        "name": "Media"
+      }
+    },
+    {
+      "model": "api.difficulty",
+      "pk": 3,
+      "fields": {
+        "name": "Difícil"
+      }
+    }
+  ]
+  
